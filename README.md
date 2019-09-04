@@ -1,5 +1,6 @@
 # An example of Winston (Logger for Node.js) usage
-This is an example just to demonstrate how Winston can be use as logging library for web applications and REST APIs.
+This is an example just to demonstrate how Winston can be use as logging library for web applications and REST APIs.  
+All messages will be logged within console and also in a file configured at `.env` file.
 
 ## Dependencies
 - [NodeJS/NPM](https://nodejs.org/): JavaScript runtime.
@@ -20,6 +21,7 @@ Find below all endpoints exposed by this server. Payload examples are available 
 This project has a `.env` file which contains environment variables used to start this server.
 
 `PORT`: port used to run Server.  
+`LOG_FILE`: logger file name.  
 
 ## Dependencies and Execution
 Before run each server run the following command (once in each folder) to install the proper dependencies:
