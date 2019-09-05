@@ -1,5 +1,5 @@
 const { createLogger, format, transports } = require('winston');
-const { combine, timestamp, label, printf } = format;
+const { combine, timestamp, label, printf, colorize } = format;
 
 require('dotenv').config();
 
@@ -19,7 +19,11 @@ module.exports = prefix => {
         format: combine(
             label({ label: prefix }), // Use the prefix defined in the module's import
             timestamp(), // Print time stamp
-            myFormat // Use our customized format
+            myFormat, // Use our customized format
+            colorize({
+                all: true,
+                colors: { info: 'green', error: 'red' }
+            })
         ),
         transports: [new transports.Console(), new transports.File({ filename: process.env.LOG_FILE })] // Output log in console and in the file 'server.log'
     });
